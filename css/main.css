@@ -51,7 +51,7 @@ hr {
 
 .banner {
 	position: fixed;
-	background: url(./../img/me.jpg);
+	background: url(./../img/me1.jpg);
 	background-size: cover;
 	background-position-x: 20%;
 	height: 100vh;
@@ -96,8 +96,8 @@ hr {
 
 .name-block {
 	position: absolute;
-	bottom: 0;
-	padding: 25px;
+	top: 12%;
+	padding: 20px;
 	text-shadow: 0 0 30px black;
 }
 
@@ -311,13 +311,13 @@ hr {
 		height: 100%;
 		width: 100%;
 		line-height: normal;
-		background-position-y: 42%;
+		background-position-y: 70%;
 		margin-top: 35px;
 	}
 
 	.name-block {
 		position: static;
-		padding: 200px 25px 0 25px;
+		padding: 200px 20px 0 20px;
 	}
 
 	.header {
