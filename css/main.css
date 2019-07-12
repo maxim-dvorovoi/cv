@@ -251,6 +251,18 @@ hr {
 	z-index: 50;
 }
 
+.award {
+	position: absolute;
+	font-size: 26px;
+	color: gold;
+	margin-left: 9px;
+	z-index: 50;
+}
+
+.award i {
+	background-color: white;
+}
+
 .sticky {
 	position: -webkit-sticky;
 	position: sticky;
