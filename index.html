@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <title>Maxim Dvorovoi</title>
 <meta charset="UTF-8">
@@ -19,7 +19,7 @@
 	   </div>
 	</div>
 	
-	<div style="display:none;" id="index" class="animate-bottom">
+	<div id="index" class="main">
 		<div class="banner">
 			<div class="name-block">
 				<h2>Hi, I'm</h2>
@@ -34,14 +34,14 @@
 
 		<div class="container">
 			<div class="header">
-				<span>Resume</span>
-				<span>Experience</span>
-				<span>Projects</span>
-				<span>Contact</span>
+				<span onclick="scrollToTag('resume')">Resume</span>
+				<span onclick="scrollToTag('experience')">Experience</span>
+				<span onclick="scrollToTag('education')">Education</span>
+				<span onclick="scrollToTag('projects')">Projects</span>
 			</div>
 
 			<div class="content">
-				<h3>Profile</h3>
+				<h3 id="resume">Profile</h3>
 				<h2>I'm a Fullstack Web Developer from Kyiv, UA. I aim to make a difference through my creative solution.</h2>
 				<h4>Worked with project teams to create user-friendly and appealing application interfaces and websites for users. I have worked with Vue.js framework and Highcharts as front-end developer. As a back-end developer, I have acted with PHP, MySQL, ElasticSearch, Nginx, Facebook API, Jira API and various Google API.</h4>
 				<hr>
@@ -139,7 +139,7 @@
 					</div>
 				</div>
 				<br>
-				<h3>Experience</h3>
+				<h3 id="experience">Experience</h3>
 				<div class="timeline experience">
 					<div class="trophy sticky">
 						<i class="fas fa-trophy"></i>
@@ -148,30 +148,34 @@
 						<div class="exp-holder">
 							<div class="exp">
 								<div class="hgroup">
-									<h4><span>UX Designer</span> @ Apple Inc</h4>
-									<h5>Feb 2017 - <span class="current">Present</span></h5>
+									<h4>
+										Full-Stack developer @
+										<a href="https://semalt.com" target="_blank" rel="noreferrer noorigin">
+											Semalt
+										</a>
+									</h4>
+									<h5>Sep 2018 - <span class="current">Present</span></h5>
 								</div>
-								<p>Ut enim ad minim veniam, quis nostrud exerc. Irure dolor in reprehend incididunt labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+								<p>Semalt is a team of creative, talented, proactive, and motivated experts, who have brought many successful IT projects to life. We have been honing our skills for ten years now, so we can say without a doubt that each of us is a true master of our craft. By our joint effort, we have created one of the most original and innovative web services that we proudly present to you now.</p>
 							</div>
+
 							<div class="exp">
 								<div class="hgroup">
-									<h4><span>Research Assistant</span> @ Facebook </h4>
-									<h5>Sept 2017 - Nov 2017</h5>
+									<h4>
+										Full-Stack developer @
+										<a href="https://php-academy.kiev.ua" target="_blank" rel="noreferrer noorigin">
+											PHP Academy
+										</a>
+									</h4>
+									<h5>Jan 2018 - Sep 2018</h5>
 								</div>
-								<p>Ut enim ad minim veniam, quis nostrud exerc. Irure dolor in reprehend incididunt labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-							</div>
-							<div class="exp">
-								<div class="hgroup">
-									<h4><span>Intern</span> @ Google </h4>
-									<h5>May 2017 - Sept 2017</h5>
-								</div>
-								<p>Ut enim ad minim veniam, quis nostrud exerc. Irure dolor in reprehend incididunt labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+								<p>PHP Academy is the №1 web programming school in Ukraine. Provide courses with the documentary guarantee of the internship specified in the contract.</p>
 							</div>
 						</div>
 					</div>
 				</div>
 				<br>
-				<h3>Education</h3>
+				<h3 id="education">Education</h3>
 				<div class="timeline experience">
 					<div class="award sticky">
 						<i class="fas fa-award"></i>
@@ -180,32 +184,65 @@
 						<div class="exp-holder">
 							<div class="exp">
 								<div class="hgroup">
-									<h4><span>UX Designer</span> @ Apple Inc</h4>
-									<h5>Feb 2017 - <span class="current">Present</span></h5>
+									<h4>
+										Junior Web Developer @
+										<a href="https://php-academy.kiev.ua" target="_blank" rel="noreferrer noorigin">
+											PHP Academy
+										</a>
+									</h4>
+									<h5>2017 - 2018</h5>
 								</div>
-								<p>Ut enim ad minim veniam, quis nostrud exerc. Irure dolor in reprehend incididunt labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+								<p>PHP Academy is the №1 web programming school in Ukraine. Provide courses with the documentary guarantee of the internship specified in the contract.</p>
 							</div>
+
 							<div class="exp">
 								<div class="hgroup">
-									<h4><span>Research Assistant</span> @ Facebook </h4>
-									<h5>Sept 2017 - Nov 2017</h5>
+									<h4>
+										IT Specialist @
+										<a href="http://foreign.dut.edu.ua" target="_blank" rel="noreferrer noorigin">
+											State University of Telecommunications
+										</a>
+									</h4>
+									<h5>2014 - 2018</h5>
 								</div>
-								<p>Ut enim ad minim veniam, quis nostrud exerc. Irure dolor in reprehend incididunt labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+								<p>Learning in specialized classrooms and laboratories equipped with the latest devices from the leading companies HP, Alcatel-Lucent, D-Link, Huawei, ZTE, Ericsson, IBM, Watson Telecom. The State University of Telecommunications open academy CISCO, within which the Linux Professional Institute, the only certified in Ukraine Academy of Hewlett Packard, held courses in-depth study of technical English in areas of IT.</p>
 							</div>
+
 							<div class="exp">
 								<div class="hgroup">
-									<h4><span>Intern</span> @ Google </h4>
-									<h5>May 2017 - Sept 2017</h5>
+									<h4>
+										Junior IT Specialist @
+										<a href="https://sites.google.com/view/kkz" target="_blank" rel="noreferrer noorigin">
+											Kiev College of Communication
+										</a>
+									</h4>
+									<h5>2014 - 2018</h5>
 								</div>
-								<p>Ut enim ad minim veniam, quis nostrud exerc. Irure dolor in reprehend incididunt labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+								<p>Was founded in 1921 by the International Committee of Education of Ukraine. For its 90 - year history, the college has trained more than 72,000 IT specialists and about 1,200 specialists of the foreign students department. Throughout its history the college has improved pedagogical skills of the teachers, introduced new technology training, accumulated education potential, improved the material and technical base.</p>
 							</div>
 						</div>
 					</div>
 				</div>
 				<br>
-				<h3>Projects</h3>
+				<h3 id="projects">Projects</h3>
+				<div class="projects">
+					<div>
+						<a href="https://hand-made-bymaxim.000webhostapp.com/" target="_blank" rel="noreferrer noorigin">
+							<img src="http://myprintscreen.com/s/18iy1/0549a71c0e">
+						</a>
+						<h4>Hand - made</h4>
+						<p>This project is created on Symfony 3,4. It was a thesis work on courses PHP Academy.</p>
+					</div>
+					<div>
+						<a href="https://vmolo4nik.github.io/dont-touch-the-blocks/" target="_blank" rel="noreferrer noorigin">
+							<img src="http://myprintscreen.com/s/18iy7/dc810755b9">
+						</a>
+						<h4>Dont touch the blocks</h4>
+						<p>This game is a simple variation Flappy Bird. I have used object-oriented programming and functional programming, to learn how it works.</p>
+					</div>
+				</div>
 				<br>
-				<h3>Contact</h3>
+				<h3>Social media</h3>
 				<br>
 			</div>
 		</div>
@@ -213,8 +250,16 @@
 	
 	<script>
 		function showPage() {
-		  document.getElementById("loader").style.display = "none";
-		  document.getElementById("index").style.display = "block";
+			document.getElementById("loader").style.display = "none";
+			document.getElementById("index").className = "main-active";
+		}
+
+		function scrollToTag(id) {
+			var top = document.getElementById(id).offsetTop - 50;
+			window.scrollTo({
+				top: top,
+				behavior: "smooth"
+			});
 		}
 	</script>
 </body>
