@@ -48,6 +48,15 @@ hr {
 	height: 1px;
 }
 
+a {
+	text-decoration: none;
+	transition: .3s;
+}
+
+a:hover {
+	opacity: .7;
+}
+
 .main {
 	position: absolute;
 	overflow: hidden;
@@ -63,7 +72,7 @@ hr {
 
 .banner {
 	position: fixed;
-	background: url(./../img/me1.jpg);
+	background: url(./../img/me3.jpeg);
 	background-size: cover;
 	background-position-x: 20%;
 	height: 100vh;
@@ -82,6 +91,7 @@ hr {
 .header {
 	position: fixed;
 	top: 0;
+	right: 0;
 	height: 40px;
 	width: 55%;
 	border-bottom: 1px solid lightgray;
@@ -250,14 +260,8 @@ hr {
 }
 
 .exp .hgroup h4 a {
-	text-decoration: none;
 	font-weight: 500;
 	color: #727272;
-	transition: .3s;
-}
-
-a:hover {
-	opacity: .7;
 }
 
 .exp .hgroup h5 {
@@ -307,10 +311,6 @@ a:hover {
 	cursor: pointer;
 }
 
-.projects div img:hover {
-	opacity: .7;
-}
-
 .projects div h4 {
 	color: #414141;
 	text-transform: uppercase;
@@ -325,10 +325,75 @@ a:hover {
 	text-align: center;
 }
 
+.social {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	font-size: 20px;
+}
+
+.social a {
+	color: white;
+	padding: 2px 7px;
+	border-radius: 7px;
+	margin: 5px;
+}
+
+.instagram-btn {
+	background-color: #f42d7f;
+}
+
+.facebook-btn {
+	background-color: #4267b2;
+}
+
+.linkedin-btn {
+	background-color: #0077B5;
+}
+
+.github-btn {
+	background-color: #161415;
+}
+
+.email {
+	position: relative;
+	margin: 30px 0 20px;
+	text-align: center;
+}
+
+.email:before {
+	position: absolute;
+	left: 0;
+	top: 12px;
+	content: '';
+	border-top: 1px solid #ddd;
+	width: 100%;
+}
+
+.email a {
+	position: relative;
+	padding: 7px;
+	background-color: #333;
+	color: white;
+	border-radius: 7px;
+	cursor: pointer;
+}
+
+.email a:hover {
+	background-color: white;
+	color: black;
+	border-radius: 7px;
+	border: 1px solid black;
+}
+
 .sticky {
 	position: -webkit-sticky;
 	position: sticky;
 	top: 45px;
+}
+
+.burger {
+	display: none;
 }
 
 .green {
@@ -496,6 +561,48 @@ a:hover {
 }
 
 @media (max-width: 1024px) {
+	.burger {
+		display: block;
+		width: 22px;
+		height: 14px;
+		position: relative;
+		top: 12px;
+		cursor: pointer;
+		transform: rotate(0deg) translateX(-75px);
+		transition: .5s ease-in-out;
+		overflow: hidden;
+		z-index: 200;
+
+	}
+
+	.burger span {
+		display: block;
+		position: absolute;
+		height: 2px;
+		background: #fff;
+		border-radius: 4px;
+		opacity: 1;
+		left: 0;
+		transform: rotate(0deg);
+		transition: .25s ease-in-out;
+	}
+
+	.burger span:hover {
+		opacity: 1;
+	}
+
+	.burger span:nth-child(1) {
+		top: 0px;
+	}
+
+	.burger span:nth-child(2) {
+		top: 6px;
+	}
+
+	.burger span:nth-child(3) {
+		top: 12px;
+	}
+
 	.sticky {
 		top: 36px;
 	}
@@ -506,7 +613,6 @@ a:hover {
 		width: 100%;
 		line-height: normal;
 		background-position-y: 70%;
-		margin-top: 35px;
 	}
 
 	.name-block {
@@ -516,14 +622,22 @@ a:hover {
 
 	.header {
 		position: fixed;
-		left: 0;
-		height: 35px;
-		line-height: 35px;
-		width: 100%;
+		transform: translateX(240px);
+		right: 0;
+		height: 100vh;
+		line-height: 45px;
+		width: 200px;
+		display: flex;
+		flex-direction: column;
+		text-align: start;
+		transition: .5s;
+		-webkit-box-shadow: 0px 0px 34px 0px rgba(0,0,0,0.75);
+		-moz-box-shadow: 0px 0px 34px 0px rgba(0,0,0,0.75);
+		box-shadow: 0px 0px 34px 0px rgba(0,0,0,0.75);
 	}
 
 	.header span {
-		padding: 0 5px;
+		padding: 0 15px;
 		font-size: 15px;
 	}
 
