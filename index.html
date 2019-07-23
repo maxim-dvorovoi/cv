@@ -279,8 +279,8 @@
 		}
 
 		function scrollToTag(id) {
-			var top = document.getElementById(id).offsetTop;
-			if (window.innerWidth > 1024) top = top - 50;
+			var top = document.getElementById(id).offsetTop - 10;
+			if (window.innerWidth > 1024) top = top - 40;
 
 			window.scrollTo({
 				top: top,
