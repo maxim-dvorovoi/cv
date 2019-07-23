@@ -20,7 +20,7 @@
 	</div>
 	
 	<div id="index" class="main">
-		<div class="banner">
+		<div class="banner" id="banner">
 			<div class="name-block">
 				<h2>Hi, I'm</h2>
 				<h1>
@@ -33,18 +33,11 @@
 		</div>
 
 		<div class="container">
-			<div class="header">
-				<div class="burger">
-					<div>
-						<span></span>
-						<span></span>
-						<span></span>
-					</div>
-					<div>
-						<span></span>
-						<span></span>
-						<span></span>
-					</div>
+			<div class="header" id="header">
+				<div class="burger" id="burger" onclick="showHideHeader()">
+					<span></span>
+					<span></span>
+					<span></span>
 				</div>
 				<span onclick="scrollToTag('resume')">Resume</span>
 				<span onclick="scrollToTag('experience')">Experience</span>
@@ -278,17 +271,40 @@
 	</div>
 	
 	<script>
+		document.addEventListener("scroll", onScroll);
+
 		function showPage() {
 			document.getElementById("loader").style.display = "none";
 			document.getElementById("index").className = "main-active";
 		}
 
 		function scrollToTag(id) {
-			var top = document.getElementById(id).offsetTop - 50;
+			var top = document.getElementById(id).offsetTop;
+			if (window.innerWidth > 1024) top = top - 50;
+
 			window.scrollTo({
 				top: top,
 				behavior: "smooth"
 			});
+		}
+
+		function onScroll() {
+			if (window.innerWidth > 1024) return;
+			if (document.getElementById("banner").offsetHeight > scrollTop()) {
+				return document.getElementById("burger").className = "burger";
+			}
+
+			document.getElementById("burger").className = "burger-black";
+		}
+
+		function scrollTop() {
+			return window.scrollY != null ? window.scrollY : window.pageYOffset;
+		}
+
+		function showHideHeader() {
+			var className = document.getElementById("header").className;
+			console.log(className);
+			document.getElementById("header").className = className == "header active" ? "header" : "header active";
 		}
 	</script>
 </body>
