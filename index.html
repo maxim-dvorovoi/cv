@@ -284,6 +284,7 @@
 	
 	<script>
 		document.addEventListener("scroll", onScroll);
+		document.addEventListener("click", onClick);
 
 		function showPage() {
 			document.getElementById("loader").style.display = "none";
@@ -292,7 +293,7 @@
 
 		function scrollToTag(id) {
 			var top = document.getElementById(id).offsetTop - 10;
-			if (window.innerWidth > 1024) top = top - 40;
+			if (window.innerWidth > 962) top = top - 40;
 
 			window.scrollTo({
 				top: top,
@@ -301,7 +302,7 @@
 		}
 
 		function onScroll() {
-			if (window.innerWidth > 1024) return;
+			if (window.innerWidth > 962) return;
 			if (document.getElementById("banner").offsetHeight > scrollTop()) {
 				return document.getElementById("burger").className = "burger";
 			}
@@ -316,6 +317,20 @@
 		function showHideHeader() {
 			var className = document.getElementById("header").className;
 			document.getElementById("header").className = className == "header active" ? "header" : "header active";
+		}
+
+		function onClick(e) {
+			if (window.innerWidth > 962) return;
+			if (document.getElementById("header").className === "header") return;
+
+			var tags = e.path.filter(isTagHeader);
+			if (tags.length) return;
+
+			document.getElementById("header").className = "header";
+		}
+
+		function isTagHeader(item) {
+			return item.id === "burger" || item.id === "header";
 		}
 	</script>
 </body>
