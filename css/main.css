@@ -101,6 +101,10 @@ a:hover {
 	z-index: 100;
 }
 
+.header i {
+	display: none;
+}
+
 .header span {
 	vertical-align: sub;
 	padding: 0 15px;
@@ -631,6 +635,12 @@ a:hover {
 		-webkit-transform: rotate(-135deg);
 	}
 
+	.header i {
+		display: inline-block;
+		width: 30px;
+		text-align: center;
+	}
+
 	.sticky {
 		top: 36px;
 	}
@@ -653,7 +663,7 @@ a:hover {
 		transform: translateX(240px);
 		right: 0;
 		height: 100vh;
-		line-height: 45px;
+		line-height: 60px;
 		width: 200px;
 		display: flex;
 		flex-direction: column;
@@ -721,5 +731,11 @@ a:hover {
 	.projects div {
 		width: 100%;
 		margin-top: 70px;
+	}
+}
+
+@media (max-width: 360px) {
+	.social a {
+		margin: 5px auto;
 	}
 }
