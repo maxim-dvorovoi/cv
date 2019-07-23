@@ -72,7 +72,7 @@ a:hover {
 
 .banner {
 	position: fixed;
-	background: url(./../img/me3.jpeg);
+	background: url(./../img/me.jpeg);
 	background-size: cover;
 	background-position-x: 20%;
 	height: 100vh;
