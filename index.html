@@ -326,6 +326,7 @@
 			var tags = e.path.filter(isTagHeader);
 			if (tags.length) return;
 
+			e.preventDefault();
 			document.getElementById("header").className = "header";
 		}
 

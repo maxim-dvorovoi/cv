@@ -587,7 +587,7 @@ a:hover {
 		position: relative;
 		top: 9px;
 		cursor: pointer;
-		transition: transform .5s ease-in-out;
+		transition: transform .5s;
 		overflow: hidden;
 		z-index: 200;
 	}
@@ -604,11 +604,15 @@ a:hover {
 	}
 
 	.header.active #burger {
-		transform: rotate(0deg) translateX(-40px);
+		transform: rotate(0deg) translateX(170px);
 	}
 
 	.header #burger {
 		transform: rotate(0deg) translateX(-71px);
+	}
+
+	.header.active #burger span {
+		background: black;
 	}
 
 	.burger-black span {
@@ -691,7 +695,6 @@ a:hover {
 
 	.header.active {
 		transform: unset;
-
 	}
 
 	.header span {
@@ -705,8 +708,12 @@ a:hover {
 	}
 
 	.content {
-		padding: 25px;
+		padding: 35px;
 		margin: 0;
+	}
+
+	.progress {
+		width: 100%;
 	}
 }
 
@@ -747,10 +754,18 @@ a:hover {
 		width: 100%;
 		margin-top: 70px;
 	}
+
+	.exp {
+		padding: 20px 20px 0 65px;
+	}
 }
 
 @media (max-width: 360px) {
 	.social a {
 		margin: 5px auto;
+	}
+
+	.content {
+		padding: 25px 35px 25px 25px;
 	}
 }
