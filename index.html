@@ -285,6 +285,7 @@
 	<script>
 		document.addEventListener('scroll', onScroll);
 		document.addEventListener('click', onClick);
+		document.addEventListener('touchstart', onTouchStart);
 
 		function onScroll() {
 			if (window.innerWidth > 962) return;
@@ -307,6 +308,36 @@
 
 			e.preventDefault();
 			document.getElementById('header').className = 'header';
+		}
+
+		function onTouchStart(e) {
+			document.removeEventListener('touchmove', onTouchMove);
+			document.removeEventListener('touchend', onTouchEnd);
+
+			if (window.innerWidth > 962 || !e.touches || !e.touches.length) return;
+			if (e.touches[0].clientY < 40) return;
+
+			var headerClassName = document.getElementById('header').className;
+			if (headerClassName === 'header' && window.innerWidth - 20 > e.touches[0].clientX) return;
+			if (headerClassName === 'header active' && window.innerWidth - 210 < e.touches[0].clientX) return;
+
+			document.addEventListener('touchmove', onTouchMove);
+			document.addEventListener('touchend', onTouchEnd);
+		}
+
+		function onTouchMove(e) {
+			if (!e.touches || !e.touches.length) return;
+			var x = (window.innerWidth - e.touches[0].clientX) > 210 ? -210 : e.touches[0].clientX - window.innerWidth;
+			document.getElementById('header').style.transition = '0s';
+			document.getElementById('burger').style.transition = '0s';
+			document.getElementById('header').style.transform = 'translateX(' + x + 'px)';
+			document.getElementById('burger').style.transform = 'translateX(' + (-x) + 'px)';
+		}
+
+		function onTouchEnd(e) {
+			showHideHeader();
+			document.getElementById('header').removeAttribute("style");
+			document.getElementById('burger').removeAttribute("style");
 		}
 
 		function showPage() {
