@@ -285,18 +285,13 @@
 	
 	<script>
 		onResize();
-		window.onresize = onResize;
 		document.addEventListener('scroll', onScroll);
 		document.addEventListener('click', onClick);
 		document.addEventListener('touchstart', onTouchStart, { passive: false });
 
 		function onResize() {
-			if (document.getElementById('banner').style.height) {
-				document.getElementById('banner').removeAttribute("style");
-			}
 			if (window.innerWidth > 500) return;
 
-			console.log(1);
 			document.getElementById('banner').style.height = window.innerHeight + 'px';
 		}
 
