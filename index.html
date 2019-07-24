@@ -283,12 +283,12 @@
 	</div>
 	
 	<script>
-		document.addEventListener("scroll", onScroll);
-		document.addEventListener("click", onClick);
+		document.addEventListener('scroll', onScroll);
+		document.addEventListener('click', onClick);
 
 		function showPage() {
-			document.getElementById("loader").style.display = "none";
-			document.getElementById("index").className = "main-active";
+			document.getElementById('loader').style.display = 'none';
+			document.getElementById('index').className = 'main-active';
 		}
 
 		function scrollToTag(id) {
@@ -297,17 +297,20 @@
 
 			window.scrollTo({
 				top: top,
-				behavior: "smooth"
+				behavior: 'smooth'
 			});
 		}
 
 		function onScroll() {
 			if (window.innerWidth > 962) return;
-			if (document.getElementById("banner").offsetHeight > scrollTop()) {
-				return document.getElementById("burger").className = "burger";
+
+			var burgerClassName = document.getElementById('burger').className;
+			if (document.getElementById('banner').offsetHeight > scrollTop()) {
+				if (burgerClassName !== 'burger') document.getElementById('burger').className = 'burger';
+				return;
 			}
 
-			document.getElementById("burger").className = "burger-black";
+			if (burgerClassName !== 'burger-black') document.getElementById('burger').className = 'burger-black';
 		}
 
 		function scrollTop() {
@@ -315,23 +318,23 @@
 		}
 
 		function showHideHeader() {
-			var className = document.getElementById("header").className;
-			document.getElementById("header").className = className == "header active" ? "header" : "header active";
+			var className = document.getElementById('header').className;
+			document.getElementById('header').className = className === 'header active' ? 'header' : 'header active';
 		}
 
 		function onClick(e) {
 			if (window.innerWidth > 962) return;
-			if (document.getElementById("header").className === "header") return;
+			if (document.getElementById('header').className === 'header') return;
 
 			var tags = e.path.filter(isTagHeader);
 			if (tags.length) return;
 
 			e.preventDefault();
-			document.getElementById("header").className = "header";
+			document.getElementById('header').className = 'header';
 		}
 
 		function isTagHeader(item) {
-			return item.id === "burger" || item.id === "header";
+			return item.id === 'burger' || item.id === 'header';
 		}
 	</script>
 </body>

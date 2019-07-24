@@ -400,10 +400,6 @@ a:hover {
 	top: 45px;
 }
 
-.green {
-	color: #009688;
-}
-
 .loader {
 	position: absolute;
 	top: 50%;
@@ -603,26 +599,6 @@ a:hover {
 		transition: .25s ease-in-out;
 	}
 
-	.header.active #burger {
-		transform: rotate(0deg) translateX(170px);
-	}
-
-	.header #burger {
-		transform: rotate(0deg) translateX(-71px);
-	}
-
-	.header.active #burger span {
-		background: black;
-	}
-
-	.burger-black span {
-		background: black;
-	}
-
-	.burger span {
-		background: #fff;
-	}
-
 	#burger span:hover {
 		opacity: 1;
 	}
@@ -639,42 +615,12 @@ a:hover {
 		top: 12px;
 	}
 
-	.header.active #burger span:nth-child(1) {
-		top: 6px;
-		-webkit-transform: rotate(135deg);
+	.burger-black span {
+		background: black;
 	}
 
-	.header.active #burger span:nth-child(2) {
-		left: 20px;
-		opacity: 0;
-	}
-
-	.header.active #burger span:nth-child(3) {
-		top: 6px;
-		-webkit-transform: rotate(-135deg);
-	}
-
-	.header i {
-		display: inline-block;
-		width: 30px;
-		text-align: center;
-	}
-
-	.sticky {
-		top: 5px;
-	}
-
-	.banner {
-		position: static;
-		height: 100%;
-		width: 100%;
-		line-height: normal;
-		background-position-y: 70%;
-	}
-
-	.name-block {
-		position: static;
-		padding: 150px 20px 70px 20px;
+	.burger span {
+		background: #fff;
 	}
 
 	.header {
@@ -693,13 +639,63 @@ a:hover {
 		box-shadow: 0px 0px 34px 0px rgba(0,0,0,0.75);
 	}
 
-	.header.active {
-		transform: unset;
+	.header #burger {
+		transform: rotate(0deg) translateX(-71px);
 	}
 
 	.header span {
 		padding: 0 15px;
 		font-size: 15px;
+	}
+
+	.header i {
+		display: inline-block;
+		width: 30px;
+		text-align: center;
+	}
+
+	.header.active {
+		transform: unset;
+	}
+
+	.header.active #burger {
+		transform: rotate(0deg) translateX(170px);
+	}
+
+	.header.active #burger span {
+		background: black;
+	}
+
+	.header.active #burger span:nth-child(1) {
+		top: 6px;
+		-webkit-transform: rotate(135deg);
+	}
+
+	.header.active #burger span:nth-child(2) {
+		left: 20px;
+		opacity: 0;
+	}
+
+	.header.active #burger span:nth-child(3) {
+		top: 6px;
+		-webkit-transform: rotate(-135deg);
+	}
+
+	.sticky {
+		top: 5px;
+	}
+
+	.banner {
+		position: static;
+		height: 100%;
+		width: 100%;
+		line-height: normal;
+		background-position-y: 70%;
+	}
+
+	.name-block {
+		position: static;
+		padding: 150px 20px 70px 20px;
 	}
 
 	.container {
