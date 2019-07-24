@@ -297,14 +297,15 @@
 
 		function onScroll() {
 			if (window.innerWidth > 962) return;
-
-			var burgerClassName = document.getElementById('burger').className;
 			if (document.getElementById('banner').offsetHeight > scrollTop()) {
-				if (burgerClassName !== 'burger') document.getElementById('burger').className = 'burger';
+				if (document.getElementById('burger').className !== 'burger') {
+					document.getElementById('burger').className = 'burger';
+				}
 				return;
 			}
-
-			if (burgerClassName !== 'burger-black') document.getElementById('burger').className = 'burger-black';
+			if (document.getElementById('burger').className !== 'burger-black') {
+				document.getElementById('burger').className = 'burger-black';
+			}
 		}
 
 		function onClick(e) {
