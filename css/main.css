@@ -656,6 +656,11 @@ a:hover {
 	.header span {
 		padding: 0 15px;
 		font-size: 15px;
+		transition: .3s;
+	}
+
+	.header span:hover {
+		transform: translateX(10px);
 	}
 
 	.header i {
