@@ -285,7 +285,7 @@
 	<script>
 		document.addEventListener('scroll', onScroll);
 		document.addEventListener('click', onClick);
-		document.addEventListener('touchstart', onTouchStart);
+		document.addEventListener('touchstart', onTouchStart, { passive: false });
 
 		function onScroll() {
 			if (window.innerWidth > 962) return;
@@ -321,12 +321,14 @@
 			if (headerClassName === 'header' && window.innerWidth - 20 > e.touches[0].clientX) return;
 			if (headerClassName === 'header active' && window.innerWidth - 210 < e.touches[0].clientX) return;
 
+			e.preventDefault();
 			document.addEventListener('touchmove', onTouchMove);
 			document.addEventListener('touchend', onTouchEnd);
 		}
 
 		function onTouchMove(e) {
 			if (!e.touches || !e.touches.length) return;
+
 			var x = (window.innerWidth - e.touches[0].clientX) > 210 ? -210 : e.touches[0].clientX - window.innerWidth;
 			document.getElementById('header').style.transition = '0.1s';
 			document.getElementById('burger').style.transition = '0.1s';
@@ -334,7 +336,7 @@
 			document.getElementById('burger').style.transform = 'translateX(' + (-x) + 'px)';
 		}
 
-		function onTouchEnd(e) {
+		function onTouchEnd() {
 			showHideHeader();
 			document.getElementById('header').removeAttribute("style");
 			document.getElementById('burger').removeAttribute("style");
