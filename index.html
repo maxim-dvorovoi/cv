@@ -330,8 +330,8 @@
 			if (!e.touches || !e.touches.length) return;
 
 			var x = (window.innerWidth - e.touches[0].clientX) > 210 ? -210 : e.touches[0].clientX - window.innerWidth;
-			document.getElementById('header').style.transition = '0.15s';
-			document.getElementById('burger').style.transition = '0.15s';
+			document.getElementById('header').style.transition = '0.2s';
+			document.getElementById('burger').style.transition = '0.2s';
 			document.getElementById('header').style.transform = 'translateX(' + x + 'px)';
 			document.getElementById('burger').style.transform = 'translateX(' + (-x) + 'px)';
 		}
