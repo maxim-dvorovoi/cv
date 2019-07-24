@@ -589,11 +589,10 @@ a:hover {
 		display: block;
 		width: 22px;
 		height: 14px;
-		position: relative;
+		position: fixed;
 		top: 9px;
-		right: 40px;
+		right: 9px;
 		cursor: pointer;
-		transition: transform .5s;
 		overflow: hidden;
 		z-index: 200;
 	}
@@ -601,12 +600,14 @@ a:hover {
 	#burger span {
 		display: block;
 		position: absolute;
+		width: 100%;
 		height: 2px;
 		border-radius: 4px;
 		opacity: 1;
 		left: 0;
 		transform: rotate(0deg);
 		transition: .25s ease-in-out;
+		will-change: transform;
 	}
 
 	#burger span:hover {
@@ -643,14 +644,11 @@ a:hover {
 		display: flex;
 		flex-direction: column;
 		text-align: start;
-		transition: transform .5s;
+		transition: transform .3s;
 		-webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.35);
 		-moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.35);
 		box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.35);
-	}
-
-	.header #burger {
-		transform: translateX(0px);
+		will-change: transform;
 	}
 
 	.header span {
@@ -658,6 +656,11 @@ a:hover {
 		font-size: 15px;
 		transition: .3s;
 	}
+
+	.header span:nth-child(1) {
+		margin-top: 25px;
+	}
+
 
 	.header span:hover {
 		transform: translateX(10px);
@@ -669,29 +672,25 @@ a:hover {
 		text-align: center;
 	}
 
-	.header.active {
+	.sidebar .header {
 		transform: translateX(-210px);
 	}
 
-	.header.active #burger {
-		transform: translateX(210px);
-	}
-
-	.header.active #burger span {
+	.sidebar #burger span {
 		background: black;
 	}
 
-	.header.active #burger span:nth-child(1) {
+	.sidebar #burger span:nth-child(1) {
 		top: 6px;
 		-webkit-transform: rotate(135deg);
 	}
 
-	.header.active #burger span:nth-child(2) {
+	.sidebar #burger span:nth-child(2) {
 		left: 20px;
 		opacity: 0;
 	}
 
-	.header.active #burger span:nth-child(3) {
+	.sidebar #burger span:nth-child(3) {
 		top: 6px;
 		-webkit-transform: rotate(-135deg);
 	}

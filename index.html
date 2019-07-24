@@ -20,6 +20,12 @@
 	</div>
 	
 	<div id="index" class="main">
+		<div class="burger" id="burger" onclick="showHideHeader()">
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+
 		<div class="banner" id="banner">
 			<div class="name-block">
 				<h2>Hi, I'm</h2>
@@ -34,11 +40,6 @@
 
 		<div class="container">
 			<div class="header" id="header">
-				<div class="burger" id="burger" onclick="showHideHeader()">
-					<span></span>
-					<span></span>
-					<span></span>
-				</div>
 				<span onclick="scrollToTag('resume')">
 					<i class="fas fa-address-card"></i>
 					Resume
@@ -283,9 +284,21 @@
 	</div>
 	
 	<script>
+		onResize();
+		window.onresize = onResize;
 		document.addEventListener('scroll', onScroll);
 		document.addEventListener('click', onClick);
 		document.addEventListener('touchstart', onTouchStart, { passive: false });
+
+		function onResize() {
+			if (document.getElementById('banner').style.height) {
+				document.getElementById('banner').removeAttribute("style");
+			}
+			if (window.innerWidth > 500) return;
+
+			console.log(1);
+			document.getElementById('banner').style.height = window.innerHeight + 'px';
+		}
 
 		function onScroll() {
 			if (window.innerWidth > 962) return;
@@ -313,33 +326,38 @@
 		function onTouchStart(e) {
 			document.removeEventListener('touchmove', onTouchMove);
 			document.removeEventListener('touchend', onTouchEnd);
+			document.removeEventListener('touchmove', onTouchMovePrevent);
 
 			if (window.innerWidth > 962 || !e.touches || !e.touches.length) return;
 			if (e.touches[0].clientY < 40) return;
 
-			var headerClassName = document.getElementById('header').className;
-			if (headerClassName === 'header' && window.innerWidth - 20 > e.touches[0].clientX) return;
-			if (headerClassName === 'header active' && window.innerWidth - 210 < e.touches[0].clientX) return;
+			var className = document.getElementById('index').className;
+			if (className === 'main-active' && window.innerWidth - 20 > e.touches[0].clientX) return;
+			if (className === 'main-active sidebar' && window.innerWidth - 210 < e.touches[0].clientX) {
+				document.addEventListener('touchmove', onTouchMovePrevent, { passive: false });
+				return;
+			}
 
 			e.preventDefault();
+			document.getElementById('header').style.transition = '0s';
 			document.addEventListener('touchmove', onTouchMove);
 			document.addEventListener('touchend', onTouchEnd);
+		}
+
+		function onTouchMovePrevent(e) {
+			e.preventDefault();
 		}
 
 		function onTouchMove(e) {
 			if (!e.touches || !e.touches.length) return;
 
 			var x = (window.innerWidth - e.touches[0].clientX) > 210 ? -210 : e.touches[0].clientX - window.innerWidth;
-			document.getElementById('header').style.transition = '0.2s';
-			document.getElementById('burger').style.transition = '0.2s';
 			document.getElementById('header').style.transform = 'translateX(' + x + 'px)';
-			document.getElementById('burger').style.transform = 'translateX(' + (-x) + 'px)';
 		}
 
 		function onTouchEnd() {
-			showHideHeader();
 			document.getElementById('header').removeAttribute("style");
-			document.getElementById('burger').removeAttribute("style");
+			showHideHeader();
 		}
 
 		function showPage() {
@@ -362,8 +380,12 @@
 		}
 
 		function showHideHeader() {
-			var className = document.getElementById('header').className;
-			document.getElementById('header').className = className === 'header active' ? 'header' : 'header active';
+			var className = document.getElementById('index').className;
+			if (className === 'main-active sidebar') {
+				document.getElementById('index').className = 'main-active';
+			} else {
+				document.getElementById('index').className = 'main-active sidebar';
+			}
 		}
 
 		function isTagHeader(item) {
