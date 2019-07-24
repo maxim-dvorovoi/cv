@@ -573,6 +573,15 @@ a:hover {
 		position: fixed;
 		width: 64%;
 	}
+
+	.exp .hgroup {
+		display: block;
+	}
+
+	.exp .hgroup h5 {
+		text-align: left;
+		padding-left: 0;
+	}
 }
 
 @media (max-width: 962px) {
@@ -634,9 +643,9 @@ a:hover {
 		flex-direction: column;
 		text-align: start;
 		transition: transform .5s;
-		-webkit-box-shadow: 0px 0px 34px 0px rgba(0,0,0,0.75);
-		-moz-box-shadow: 0px 0px 34px 0px rgba(0,0,0,0.75);
-		box-shadow: 0px 0px 34px 0px rgba(0,0,0,0.75);
+		-webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.35);
+		-moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.35);
+		box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.35);
 	}
 
 	.header #burger {
