@@ -285,6 +285,8 @@
 	</div>
 	
 	<script>
+		var lastMove = null;
+
 		document.addEventListener('scroll', onScroll);
 		document.addEventListener('click', onClick);
 		document.addEventListener('touchstart', onTouchStart, { passive: false });
@@ -313,6 +315,8 @@
 		}
 
 		function onTouchStart(e) {
+			lastMove = event;
+
 			document.removeEventListener('touchmove', onTouchMove);
 			document.removeEventListener('touchend', onTouchEnd);
 			document.removeEventListener('touchmove', onTouchMovePrevent);
@@ -327,7 +331,8 @@
 				return;
 			}
 
-			e.preventDefault();
+			if (e.cancelable) e.preventDefault();
+			
 			document.getElementById('header').style.transition = '0s';
 			document.addEventListener('touchmove', onTouchMove);
 			document.addEventListener('touchend', onTouchEnd);
@@ -338,6 +343,7 @@
 		}
 
 		function onTouchMove(e) {
+			lastMove = event;
 			if (!e.touches || !e.touches.length) return;
 
 			var x = (window.innerWidth - e.touches[0].clientX) > 210 ? -210 : e.touches[0].clientX - window.innerWidth;
@@ -346,6 +352,8 @@
 
 		function onTouchEnd() {
 			document.getElementById('header').removeAttribute("style");
+			if (lastMove && window.innerWidth - 20 < lastMove.touches[0].clientX) return;
+
 			showHideHeader();
 		}
 
