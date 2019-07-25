@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="format-detection" content="telephone=no">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="Description" content="Maxim Dvorovoi Web developer. I have worked with Vue.js framework and Highcharts as front-end developer. As a back-end developer, I have acted with PHP, MySQL, Nginx, ElasticSearch, Facebook API, Jira API and various Google API. I studied in PHP Academy, State University of Telecommunications (DUT), Kiev College of Communication (KCC). Максим Дворовой Fullstack разработчик. Я работал с фреймворком Vue.js и Highcharts в качестве front-end разработчика. Как back-end разработчик, я работал с PHP, MySQL, Nginx, ElasticSearch, Facebook API, Jira API и различными Google API. Я учился в PHP Academy, Государственный университет телекоммуникаций (ГУТ ДУТ), Киевский колледж связи (ККЗ ККС).">
+<meta name="Description" content="Maxim Dvorovoi Web developer. I have worked with Vue.js framework and Highcharts as front-end developer. As a back-end developer, I have acted with PHP, MySQL, Nginx, ElasticSearch, Facebook API, Jira API and various Google API. I studied in PHP Academy, State University of Telecommunications (DUT), Kiev College of Communication (KCC).">
 <link rel="shortcut icon" href="img/favicon.ico">
 <link rel="stylesheet" href="css/main.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap">
@@ -287,11 +287,16 @@
 	<script>
 		var lastMove = null;
 
-		document.addEventListener('scroll', onScroll);
-		document.addEventListener('click', onClick);
-		document.addEventListener('touchstart', onTouchStart, { passive: false });
+		function showPage() {
+			document.getElementById('loader').style.display = 'none';
+			document.getElementById('index').className = 'main-active';
+			document.addEventListener('scroll', onScroll);
+			document.addEventListener('click', onClick);
+			document.addEventListener('touchstart', onTouchStart, { passive: false });
+		}
 
 		function onScroll() {
+
 			if (window.innerWidth > 962) return;
 
 			var className = document.getElementById('burger').className;
@@ -356,11 +361,6 @@
 			if (className === 'main-active' && lastMove && window.innerWidth - 20 < lastMove.touches[0].clientX) return;
 
 			showHideHeader();
-		}
-
-		function showPage() {
-			document.getElementById('loader').style.display = 'none';
-			document.getElementById('index').className = 'main-active';
 		}
 
 		function scrollToTag(id) {
