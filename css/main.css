@@ -65,6 +65,7 @@ a:hover {
 	position: absolute;
 	overflow: hidden;
 	opacity: 0;
+	height: 0;
 }
 
 .main-active {
