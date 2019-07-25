@@ -774,11 +774,13 @@ a:hover {
 	}
 }
 
-@media (max-width: 360px) {
+@media (max-width: 380px) {
 	.social a {
 		margin: 5px auto;
 	}
+}
 
+@media (max-width: 359px) {
 	.content {
 		padding: 25px 35px 25px 25px;
 	}
