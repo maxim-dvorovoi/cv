@@ -637,7 +637,7 @@ a:hover {
 
 	.header {
 		position: fixed;
-		transform: translateX(0px);
+		transform: translateX(0px) translateZ(0);
 		right: -210px;
 		height: 100vh;
 		line-height: 60px;
