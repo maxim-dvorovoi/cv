@@ -747,6 +747,10 @@ a:hover {
 }
 
 @media (max-width: 500px) {
+	.banner {
+		height: 100vh;
+	}
+
 	.name-block {
 		padding: 100px 15px 350px 15px;
 	}

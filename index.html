@@ -285,20 +285,9 @@
 	</div>
 	
 	<script>
-		onResize(false);
-		window.onresize = onResize;
 		document.addEventListener('scroll', onScroll);
 		document.addEventListener('click', onClick);
 		document.addEventListener('touchstart', onTouchStart, { passive: false });
-
-		function onResize(e) {
-			if (window.innerWidth > 500) {
-				if (e) document.getElementById('banner').removeAttribute("style");
-				return;
-			}
-
-			document.getElementById('banner').style.height = window.innerHeight + 'px';
-		}
 
 		function onScroll() {
 			if (window.innerWidth > 962) return;
