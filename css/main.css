@@ -662,10 +662,6 @@ a:hover {
 		margin-top: 25px;
 	}
 
-	.header span:hover {
-		transform: translateX(10px);
-	}
-
 	.header i {
 		display: inline-block;
 		width: 30px;
