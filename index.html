@@ -318,11 +318,13 @@
 		}
 
 		function onTouchStart(e) {
-			if (window.innerWidth > 962 || !e.touches || !e.touches.length || e.touches[0].clientY < 40) return;
+			if (window.innerWidth > 962 || !e.touches || !e.touches.length) return;
 
+			var touch = e.touches[0];
 			var className = document.getElementById('index').className;
-			if (className === 'main-active' && window.innerWidth - 20 > e.touches[0].clientX) return;
-			if (className === 'main-active sidebar' && window.innerWidth - 210 < e.touches[0].clientX) {
+
+			if (className === 'main-active' && (window.innerWidth - 20 > touch.clientX || touch.clientY < 40)) return;
+			if (className === 'main-active sidebar' && window.innerWidth - 210 < touch.clientX) {
 				document.addEventListener('touchmove', onTouchMovePrevent, { passive: false });
 				document.addEventListener('touchend', onTouchEnd);
 				return;
@@ -357,7 +359,7 @@
 			document.removeEventListener('touchmove', onTouchMovePrevent);
 			document.getElementById('header').removeAttribute("style");
 
-
+			if ((e.target && e.target.id === 'burger') || (e.target.offsetParent && e.target.offsetParent.id === 'burger')) return;
 			if (className === 'main-active' && lastMove && window.innerWidth - 20 < lastMove.touches[0].clientX) return;
 
 			showHideHeader();
