@@ -674,6 +674,10 @@ a:hover {
 		transition: .3s;
 	}
 
+	.header span:hover {
+		opacity: 1;
+	}
+
 	.header span:nth-child(1) {
 		margin-top: 25px;
 	}
