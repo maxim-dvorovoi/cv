@@ -365,6 +365,20 @@
 			showHideHeader();
 		}
 
+		function showHideHeader() {
+			var className = document.getElementById('index').className;
+			className = className === 'main-active sidebar' ? 'main-active' : 'main-active sidebar';
+			document.getElementById('index').className = className;
+		}
+
+		function isTagHeader(item) {
+			return item.id === 'burger' || item.id === 'header';
+		}
+		
+		function scrollTop() {
+			return window.scrollY != null ? window.scrollY : window.pageYOffset;
+		}
+
 		function scrollToTag(id) {
 			var clientY = scrollTop();
 			var tagY = document.getElementById(id).offsetTop - 10;
@@ -377,20 +391,6 @@
 					window.scrollTo({top: clientY - (clientY - tagY) * progress});
 				}
 			});
-		}
-
-		function scrollTop() {
-			return window.scrollY != null ? window.scrollY : window.pageYOffset;
-		}
-
-		function showHideHeader() {
-			var className = document.getElementById('index').className;
-			className = className === 'main-active sidebar' ? 'main-active' : 'main-active sidebar';
-			document.getElementById('index').className = className;
-		}
-
-		function isTagHeader(item) {
-			return item.id === 'burger' || item.id === 'header';
 		}
 
 		function animate(options) {
