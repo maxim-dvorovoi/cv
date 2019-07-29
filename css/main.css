@@ -122,6 +122,22 @@ a:hover {
 	opacity: .7;
 }
 
+.header span:nth-child(1) i {
+	color: #009688;
+}
+
+.header span:nth-child(2) i {
+	color: gold;
+}
+
+.header span:nth-child(3) i {
+	color: goldenrod;
+}
+
+.header span:nth-child(4) i {
+	color: cornflowerblue;
+}
+
 .content {
 	padding: 50px;
 	transition: .3s;
@@ -294,7 +310,7 @@ a:hover {
 .award {
 	position: absolute;
 	font-size: 26px;
-	color: gold;
+	color: goldenrod;
 	margin-left: 9px;
 	z-index: 50;
 }
