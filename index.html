@@ -323,7 +323,9 @@
 			var className = document.getElementById('index').className;
 			if (className === 'main-active' && window.innerWidth - 20 > e.touches[0].clientX) return;
 			if (className === 'main-active sidebar' && window.innerWidth - 210 < e.touches[0].clientX) {
+				//console.log(e);
 				document.addEventListener('touchmove', onTouchMovePrevent, { passive: false });
+				document.addEventListener('touchend', onTouchEnd);
 				return;
 			}
 
@@ -347,13 +349,16 @@
 			document.getElementById('header').style.transform = 'translateX(' + x + 'px)';
 		}
 
-		function onTouchEnd() {
+		function onTouchEnd(e) {
+			var className = document.getElementById('index').className;
+			if (className === 'main-active sidebar' && e.target.id === 'header') return;
+			
 			document.removeEventListener('touchmove', onTouchMove);
 			document.removeEventListener('touchend', onTouchEnd);
 			document.removeEventListener('touchmove', onTouchMovePrevent);
 			document.getElementById('header').removeAttribute("style");
 
-			var className = document.getElementById('index').className;
+
 			if (className === 'main-active' && lastMove && window.innerWidth - 20 < lastMove.touches[0].clientX) return;
 
 			showHideHeader();
