@@ -230,7 +230,6 @@ a:hover {
 }
 
 .timeline:after {
-	font-family: 'Ionicons';
 	top: 0;
 	left: -5px;
 	width: 50px;
@@ -548,6 +547,53 @@ a:hover {
 	}
 }
 
+::-webkit-scrollbar {
+	width: 4px;
+	height: 4px;
+}
+
+::-webkit-scrollbar-button {
+	width: 0;
+	height: 0;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: #555;
+	border: 0 none #fff;
+	border-radius: 2px;
+.transition(all 0.5s);
+}
+
+:hover::-webkit-scrollbar-thumb {
+	background-color: #333;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: #000;
+}
+
+::-webkit-scrollbar-thumb:active {
+	background: #000;
+}
+
+::-webkit-scrollbar-track {
+	background: transparent;
+	border: 0 none #fff;
+	border-radius: 5px;
+}
+
+::-webkit-scrollbar-track:hover {
+//background: transparent;
+}
+
+::-webkit-scrollbar-track:active {
+//background: transparent;
+}
+
+::-webkit-scrollbar-corner {
+	background: transparent;
+}
+
 @media (max-width: 1150px) {
 	.banner {
 		right: unset;
@@ -624,7 +670,7 @@ a:hover {
 	}
 
 	#burger span:nth-child(1) {
-		top: 0px;
+		top: 0;
 	}
 
 	#burger span:nth-child(2) {
@@ -654,9 +700,9 @@ a:hover {
 		flex-direction: column;
 		text-align: start;
 		transition: transform .3s;
-		-webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.35);
-		-moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.35);
-		box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.35);
+		-webkit-box-shadow: 0 0 10px 0 rgba(0,0,0,0.35);
+		-moz-box-shadow: 0 0 10px 0 rgba(0,0,0,0.35);
+		box-shadow: 0 0 0 rgba(0,0,0,0.35);
 		will-change: transform;
 	}
 
