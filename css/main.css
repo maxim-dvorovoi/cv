@@ -569,29 +569,29 @@ a:hover {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-	background: #000;
+	background-color: #000;
 }
 
 ::-webkit-scrollbar-thumb:active {
-	background: #000;
+	background-color: #000;
 }
 
 ::-webkit-scrollbar-track {
-	background: transparent;
+	background-color: transparent;
 	border: 0 none #fff;
 	border-radius: 5px;
 }
 
 ::-webkit-scrollbar-track:hover {
-//background: transparent;
+	background-color: transparent;
 }
 
 ::-webkit-scrollbar-track:active {
-//background: transparent;
+	background-color: transparent;
 }
 
 ::-webkit-scrollbar-corner {
-	background: transparent;
+	background-color: transparent;
 }
 
 @media (max-width: 1150px) {
