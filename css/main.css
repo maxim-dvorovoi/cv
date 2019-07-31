@@ -206,7 +206,7 @@ a:hover {
 	line-height: 40px;
 	text-align: center;
 	color: #000;
-	background: #F1F3F6;
+	background-color: #F1F3F6;
 	font-weight: 500;
 	position: absolute;
 	top: -16px;
@@ -219,7 +219,7 @@ a:hover {
 }
 
 .timeline:before {
-	background: #ddd;
+	background-color: #ddd;
 	bottom: 0;
 	content: "";
 	left: 18px;
@@ -267,7 +267,7 @@ a:hover {
 }
 
 .exp:after {
-	background: #FFF;
+	background-color: #FFF;
 	border: 2px solid #ddd;
 	border-radius: 50%;
 	content: "";
@@ -444,7 +444,7 @@ a:hover {
 	height: 30px;
 	top: 95px;
 	left: 95px;
-	background: #009688;
+	background-color: #009688;
 	border-radius: 50%;
 	-webkit-animation-fill-mode: both;
 	animation-fill-mode: both;
@@ -459,7 +459,7 @@ a:hover {
 	height: 60px;
 	top: 80px;
 	left: 80px;
-	background: #009688;
+	background-color: #009688;
 	border-radius: 50%;
 	-webkit-animation-fill-mode: both;
 	animation-fill-mode: both;
@@ -474,7 +474,7 @@ a:hover {
 	height: 90px;
 	top: 65px;
 	left: 65px;
-	background: #009688;
+	background-color: #009688;
 	border-radius: 50%;
 	-webkit-animation-fill-mode: both;
 	animation-fill-mode: both;
@@ -644,11 +644,11 @@ a:hover {
 	}
 
 	.burger-black span {
-		background: black;
+		background-color: black;
 	}
 
 	.burger span {
-		background: #fff;
+		background-color: white;
 	}
 
 	.header {
@@ -693,7 +693,7 @@ a:hover {
 	}
 
 	.sidebar #burger span {
-		background: black;
+		background-color: black;
 	}
 
 	.sidebar #burger span:nth-child(1) {
