@@ -619,8 +619,7 @@ a:hover {
 	}
 
 	.content {
-		padding: 40px;
-		margin-top: 40px;
+		padding: 50px 40px;
 	}
 
 	.header {
@@ -778,7 +777,7 @@ a:hover {
 
 	.name-block {
 		position: static;
-		padding: 150px 20px 70px 20px;
+		padding: 130px 20px 100px 20px;
 	}
 
 	.container {
@@ -787,8 +786,7 @@ a:hover {
 	}
 
 	.content {
-		padding: 35px;
-		margin: 0;
+		padding: 15px 35px 25px;
 	}
 
 	.progress {
@@ -822,7 +820,7 @@ a:hover {
 	}
 
 	.name-block {
-		padding: 100px 15px 350px 15px;
+		padding: 15vh 15px 0;
 	}
 
 	.info-list div {
