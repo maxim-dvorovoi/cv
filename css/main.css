@@ -323,6 +323,7 @@ a:hover {
 .projects {
 	display: flex;
 	justify-content: space-between;
+	flex-wrap: wrap;
 }
 
 .projects div {
