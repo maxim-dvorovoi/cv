@@ -143,8 +143,8 @@ function preventDefault(e) {
 }
 
 function preventDefaultForScrollKeys(e) {
-    if (!keys[e.keyCode]) return;
-	
+	if (!keys[e.keyCode]) return;
+
 	preventDefault(e);
 	return false;
 }
@@ -155,18 +155,18 @@ function disableScroll() {
 	document.addEventListener('mousewheel', preventDefault, {passive: false});
 	document.addEventListener('onmousewheel', preventDefault, {passive: false});
 	document.addEventListener('MozMousePixelScroll', preventDefault, {passive: false});
-	
+
 	document.addEventListener('onkeydown', preventDefaultForScrollKeys, {passive: false});
 	document.addEventListener('touchmove', preventDefault, {passive: false});
 }
 
 function enableScroll() {
-    document.removeEventListener('DOMMouseScroll', preventDefault, false);
+	document.removeEventListener('DOMMouseScroll', preventDefault, false);
 	document.removeEventListener('wheel', preventDefault, {passive: false});
 	document.removeEventListener('mousewheel', preventDefault, {passive: false});
 	document.removeEventListener('onmousewheel', preventDefault, {passive: false});
 	document.removeEventListener('MozMousePixelScroll', preventDefault, {passive: false});
-	
+
 	document.removeEventListener('onkeydown', preventDefaultForScrollKeys, {passive: false});
 	document.removeEventListener('touchmove', preventDefault, {passive: false});
 }
