@@ -1,4 +1,5 @@
 var lastMove = null;
+var keys = {37: 1, 38: 1, 39: 1, 40: 1};
 
 function showPage() {
 	document.getElementById('loader').style.display = 'none';
@@ -93,15 +94,17 @@ function scrollTop() {
 }
 
 function scrollToTag(id) {
+	disableScroll();
 	var clientY = scrollTop();
 	var tagY = document.getElementById(id).offsetTop - 10;
 	if (window.innerWidth > 962) tagY = tagY - 40;
 
 	animate({
-		duration: 1500,
+		duration: 1000,
 		timing: makeEaseInOut(quad),
 		draw: function(progress) {
 			window.scrollTo({top: clientY - (clientY - tagY) * progress});
+			if (progress === 1) enableScroll();
 		}
 	});
 }
@@ -130,4 +133,40 @@ function makeEaseInOut(timing) {
 
 function quad(timeFraction) {
 	return Math.pow(timeFraction, 2);
+}
+
+function preventDefault(e) {
+	e = e || window.event;
+	if (e.preventDefault) e.preventDefault();
+
+	e.returnValue = false;  
+}
+
+function preventDefaultForScrollKeys(e) {
+    if (!keys[e.keyCode]) return;
+	
+	preventDefault(e);
+	return false;
+}
+
+function disableScroll() {
+	document.addEventListener('DOMMouseScroll', preventDefault, false);
+	document.addEventListener('wheel', preventDefault, {passive: false});
+	document.addEventListener('mousewheel', preventDefault, {passive: false});
+	document.addEventListener('onmousewheel', preventDefault, {passive: false});
+	document.addEventListener('MozMousePixelScroll', preventDefault, {passive: false});
+	
+	document.addEventListener('onkeydown', preventDefaultForScrollKeys, {passive: false});
+	document.addEventListener('touchmove', preventDefault, {passive: false});
+}
+
+function enableScroll() {
+    document.removeEventListener('DOMMouseScroll', preventDefault, false);
+	document.removeEventListener('wheel', preventDefault, {passive: false});
+	document.removeEventListener('mousewheel', preventDefault, {passive: false});
+	document.removeEventListener('onmousewheel', preventDefault, {passive: false});
+	document.removeEventListener('MozMousePixelScroll', preventDefault, {passive: false});
+	
+	document.removeEventListener('onkeydown', preventDefaultForScrollKeys, {passive: false});
+	document.removeEventListener('touchmove', preventDefault, {passive: false});
 }
