@@ -187,6 +187,7 @@ a:hover {
 	background-color: #ddd;
 	border-radius: 0;
 	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
 	box-shadow: none;
 	overflow: visible;
 	width: 90%;
@@ -197,6 +198,7 @@ a:hover {
 	line-height: 8px;
 	background-color: #666;
 	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
 	box-shadow: none;
 	position: relative;
 }
