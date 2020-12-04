@@ -62,15 +62,12 @@ a:hover {
 }
 
 .main {
-	position: absolute;
-	overflow: hidden;
+	visibility: hidden;
 	opacity: 0;
-	height: 0;
 }
 
 .main-active {
-	position: static;
-	overflow: unset;
+	visibility: visible;
 	opacity: 1;
 	transition: opacity 0.5s ease-in-out;
 }
@@ -338,6 +335,7 @@ a:hover {
 
 .projects div {
 	width: 45%;
+	margin-bottom: 60px;
 }
 
 .projects div img {

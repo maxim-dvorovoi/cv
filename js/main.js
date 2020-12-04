@@ -2,6 +2,7 @@ var lastMove = null;
 var keys = {37: 1, 38: 1, 39: 1, 40: 1};
 
 function showPage() {
+	document.body.style.overflow = "auto";
 	document.getElementById('loader').style.display = 'none';
 	document.getElementById('index').className = 'main-active';
 	document.addEventListener('scroll', onScroll);
